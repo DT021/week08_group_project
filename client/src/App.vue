@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <!-- <h1>DEVELOPMENT</h1> -->
-    <marquee-text class="ticker" :duration="10" :repeat="10">
-    ||  AAPL: $1259 ||  MSFT: $1134 || AMZN: $1344
+    <marquee-text class="ticker" :duration="6" :repeat="10">
+      [AAPL: $1259][MSFT: $1134][AMZN: $1344][GOOG: $1101]
     </marquee-text>
     <h1>Welcome to your Stock Portfolio</h1>
     <h2>Select your stock</h2>
@@ -75,5 +75,6 @@ ul {
 
 .ticker {
   color: red;
+  font-size: 18px;
 }
 </style>

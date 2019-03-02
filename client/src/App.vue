@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <h1>DEVELOPMENT</h1>
+    <!-- <h1>DEVELOPMENT</h1> -->
+    <marquee-text class="ticker" :duration="10" :repeat="10">
+    ||  AAPL: $1259 ||  MSFT: $1134 || AMZN: $1344
+    </marquee-text>
     <h1>Welcome to your Stock Portfolio</h1>
     <h2>Select your stock</h2>
-
-      <stock-view :stocks="stocks"/>
-      <stock-prices />
+    <stock-view :stocks="stocks"/>
+    <stock-prices />
   </div>
 </template>
 
 <script>
 import StockView from './components/StockView';
 import StockPrices from './components/StockPrices';
+import MarqueeText from 'vue-marquee-text-component'
 import {eventBus} from './main';
 
 export default {
@@ -25,7 +28,8 @@ export default {
   },
   components:{
     StockView,
-    StockPrices
+    StockPrices,
+    MarqueeText
   },
   mounted(){
     this.fetchStocks();
@@ -54,12 +58,12 @@ export default {
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: 'Arimo', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 10px;
 }
 h1, h2 {
   font-weight: normal;
@@ -67,5 +71,9 @@ h1, h2 {
 ul {
   list-style-type: none;
   padding: 0;
+}
+
+.ticker {
+  color: red;
 }
 </style>
